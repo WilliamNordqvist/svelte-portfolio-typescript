@@ -2,18 +2,10 @@
   import Particles from "svelte-particles";
   import { isMobile } from "./store"
 
-  let mobile:Boolean
-
-  $:isMobile.subscribe(value => {
-		mobile = value;
-	});
-
-  $:console.log("test", mobile)
-
-  $: particlesConfig = {
+ const particlesConfig = {
     particles: {
       number: {
-        value: mobile ? 100 : 250,
+        value: $isMobile ? 100 : 250,
         density: {
           enable: true,
           value_area: 1710.2328774690454,
@@ -39,7 +31,7 @@
         },
       },
       size: {
-        value: mobile ? 1 : 1.5,
+        value: $isMobile ? 1 : 1.5,
         random: true,
         anim: {
           enable: false,
@@ -57,7 +49,7 @@
       },
       move: {
         enable: true,
-        speed: mobile ? 0.3 : 0.5,
+        speed: $isMobile ? 0.3 : 0.5,
         direction: "none",
         random: true,
         straight: false,
@@ -83,7 +75,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
     overflow: scroll;
 	}
 </style>
