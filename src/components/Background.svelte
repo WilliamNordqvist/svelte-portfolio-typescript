@@ -1,6 +1,6 @@
 <script lang="ts">
   import Particles from "svelte-particles";
-  import { isMobile } from "./store"
+  import { isMobile } from "../store"
 
  const particlesConfig = {
     particles: {

@@ -1,26 +1,46 @@
 <script lang="ts">
-	import { isMobile, fetchData } from "./store";
-	import Background from "./Background.svelte"
-	
-	let w:number;
+import { fetchData, isMobile } from "../store"
+fetchData();
 
+let w:number
 	$: if (w < 768) {
     isMobile.set(true);
   } else {
     isMobile.set(false);
   }
-	
-	fetchData();
+
 </script>
 
 <style>
 	:global(body) {
 		padding:0;
 	}
-	main {
-		height:100vh;
-		
+	:global(section) {
+		max-width: 1700px;
+		position: relative;
+		padding-bottom: 5em;
 	}
+
+	:global(a) {
+		color: #333;
+	}
+	:global(.Title) {
+  text-align: center;
+  font-size: 3em;
+  font-weight: 200;
+  color: white;
+  text-transform: uppercase;
+  margin-top: 0;
+	}
+
+	:global(.flex) {
+	width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+	}
+
 </style>
 
 <svelte:head>
@@ -31,6 +51,7 @@
 </svelte:head>
 
 <svelte:window bind:innerWidth={w} />
+
 <main>
-	<Background/>
+  <slot />
 </main>
