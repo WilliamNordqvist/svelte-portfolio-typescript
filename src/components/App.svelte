@@ -4,6 +4,7 @@
 	import StarWars from "./StarWars.svelte"
 	import Skills from "./Skills.svelte"	
 	import Works from "./Works.svelte"
+	import Cv from "./Cv.svelte"
 </script>
 
 <GlobalWrapper>
@@ -11,5 +12,6 @@
 		<StarWars />
 		<Works />
 		<Skills/>
+		<Cv />
 	</Background>
 </GlobalWrapper>

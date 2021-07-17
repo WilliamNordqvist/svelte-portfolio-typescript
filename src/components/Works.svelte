@@ -59,9 +59,6 @@
   }
 
   .text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-transform: uppercase;
     height: 100%;
     justify-content: flex-end;
@@ -144,12 +141,12 @@ span {
   {#if $isLoading === false}
   <section id="work">
   <h2 class="Title">My Work</h2>
-  <ul class="cardsComponent">
+  <ul>
     {#each $storeData as work (work.id)}
       <div class="card" on:click={$isMobile && (() => openOverlay(work))}>
         <div class="cardImg" style={`background-image:url(${work.img})`}>
           <div class="gradient">
-            <div class="text">
+            <div class="text flex">
               <h1 class="title">{work.name}</h1>
                 <div class="btn" on:click={() => openOverlay(work)}>
                   <span>Läs mer</span>

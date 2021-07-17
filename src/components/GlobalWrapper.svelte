@@ -35,11 +35,14 @@ let w:number
 	}
 
 	:global(.flex) {
-	width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+	}
+
+	:global(.pointer) {
+		cursor: pointer;
 	}
 
 </style>

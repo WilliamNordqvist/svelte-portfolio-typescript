@@ -55,17 +55,6 @@
     }
   }
 
-  .hero-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    perspective: 800px;
-    z-index: 2;
-  }
-
   .text {
     color: #f9f1e9;
     text-align: center;
@@ -97,7 +86,7 @@
   }
 </style>
 
-<section class="hero-container">
+<section class="hero-container flex">
   <h1 class="william text">William</h1>
   <h1 class="nordqvist text">Nordqvist</h1>
 

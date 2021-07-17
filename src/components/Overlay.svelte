@@ -10,16 +10,12 @@
 </script>
 
 <style>
-  .section {
-    width: 100%;
+  section {
+    width: 100%; 
     height: 100%;
     position: fixed;
-    left: 0;
     overflow: scroll;
     z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: 0.3s all ease-in-out;
     color: white;
   }
@@ -35,7 +31,6 @@
     position: absolute;
     left: 10px;
     top: 10px;
-    cursor: pointer;
   }
 
   .content {
@@ -66,7 +61,6 @@
   }
 
   a {
-    cursor: pointer;
     text-decoration: none;
     color:white;
   }
@@ -108,18 +102,18 @@ left:49%;
   }
 </style>
 
-<div
+<section
   class="section"
   style={`top:${toggleOverlay ? '0' : '100%'}`}
   >
   <div class="contentContainer">
-    <div class="close" on:click={() => closeOverlay()}>
+    <div class="close pointer" on:click={() => closeOverlay()}>
       <CloseIcon size="20px" />
     </div>
     {#if selectedWork}
       <div class="content">
 
-        <a target="_blank" rel="noopener noreferrer" href={selectedWork.link}>
+        <a class="pointer" target="_blank" rel="noopener noreferrer" href={selectedWork.link}>
           <img
             class="workImg"
             src={selectedWork.img}
@@ -134,6 +128,7 @@ left:49%;
         </div>
         {#if selectedWork.github}
           <a
+            class="pointer"
             target="_blank"
             rel="noopener noreferrer"
             href={selectedWork.github}>
@@ -145,7 +140,7 @@ left:49%;
             <a
               target="_blank"
               rel="noopener noreferrer"
-              class="visistLink"
+              class="visistLink pointer"
               href={selectedWork.link}>
               {selectedWork.link}
             </a>
@@ -155,4 +150,4 @@ left:49%;
     {/if}
 
   </div>
-</div>
+</section>

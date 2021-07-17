@@ -39,10 +39,6 @@
 <style>
   section {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
 
   .bars {
@@ -58,11 +54,8 @@
     height: 1.5em;
     margin: 0.3em 0 0.7em 0;
     border-radius: 5px;
-    padding: 1px 1px 1px 0.5px;
-    -moz-padding: 1px 1px 1px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 1px;
+    -moz-padding:1px;
   }
 
   .barText {
@@ -108,8 +101,6 @@
     background-color: whiteSmoke;
     border-radius: 2px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25) inset;
-    display: flex;
-    align-items: center;
     width: 100%;
     height: 100%;
     position: relative;
@@ -131,16 +122,16 @@
 
 <svelte:window bind:scrollY={scrollYPosition}/>
 
-<section id="skills" class="skills">
+<section id="skills" class="skills flex">
   <h2 class="Title">My Skills</h2>
   <div class="bars">
     {#each william as i (i.title)}
       <div class="barContainer" >
         <h3 class="barText">{i.title}</h3>
-        <div class="bar">
+        <div class="bar flex">
           <span>{i.skill}%</span>
           <progress max="100" value={ showSkillbar ? i.skill : 0 }>
-            <div class="progress-bar">
+            <div class="progress-bar flex">
               <span style={`width: ${i.skill}%;`}>Progress:{i.skill}%</span>
             </div>
           </progress>
