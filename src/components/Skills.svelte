@@ -18,7 +18,7 @@
     { title: "SQL", skill: 30 },
   ];
 
-  let showSkillbar:Boolean = false 
+  let showSkillbar:Boolean;
   let skillPosition: number;
   let scrollYPosition:number;
 
@@ -30,7 +30,9 @@
 
   $:if(scrollYPosition > skillPosition){
     showSkillbar = true
-  }
+  } else {
+    showSkillbar = false
+  } 
 
 </script>
 

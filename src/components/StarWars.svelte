@@ -63,7 +63,7 @@
     height: 100vh;
     width: 100vw;
     perspective: 800px;
-    z-index: 99;
+    z-index: 2;
   }
 
   .text {

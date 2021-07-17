@@ -19,10 +19,11 @@ let w:number
 		max-width: 1700px;
 		position: relative;
 		padding-bottom: 5em;
+		min-height: 100vh;
 	}
 
 	:global(a) {
-		color: #333;
+		color:inherit;
 	}
 	:global(.Title) {
   text-align: center;
