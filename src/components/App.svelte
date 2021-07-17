@@ -5,6 +5,7 @@
 	import Skills from "./Skills.svelte"	
 	import Works from "./Works.svelte"
 	import Cv from "./Cv.svelte"
+	import Footer from "./Footer.svelte"
 </script>
 
 <GlobalWrapper>
@@ -13,5 +14,6 @@
 		<Works />
 		<Skills/>
 		<Cv />
+		<Footer />
 	</Background>
 </GlobalWrapper>

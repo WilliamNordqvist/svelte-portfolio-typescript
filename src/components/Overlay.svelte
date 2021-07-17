@@ -132,7 +132,7 @@ left:49%;
             target="_blank"
             rel="noopener noreferrer"
             href={selectedWork.github}>
-            <Github size="30px"/>
+            <Github />
           </a>
         {/if}
         <p>
