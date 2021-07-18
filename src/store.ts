@@ -8,6 +8,8 @@ export type worksProps = undefined | {
   link:string,
   name:string
 }
+
+export const pageHeight: Writable<number> = writable(0);
 export const isMobile: Writable<Boolean> = writable(false);
 export const isError: Writable<Boolean> = writable(false);
 export const isLoading: Writable<Boolean> = writable(false);

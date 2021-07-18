@@ -2,9 +2,6 @@
   import LinkedInSVG from "../icons/linkedIn.svelte";
   import GithubSVG from '../icons/github.svelte'
   import GmailSVG from '../icons/gmail.svelte'
-
-  const size = "35";
-  const color = "white";
 </script>
 
 <style>

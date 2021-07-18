@@ -1,19 +1,22 @@
 <script lang="ts">
-import { fetchData, isMobile } from "../store"
-fetchData();
+import { fetchData, isMobile, pageHeight } from "../store"
+ fetchData();
+let offsetHeight:number
+
+$:pageHeight.set(offsetHeight)
 
 let w:number
 	$: if (w < 768) {
     isMobile.set(true);
   } else {
     isMobile.set(false);
-  }
-
+  }	
 </script>
 
 <style>
 	:global(body) {
 		padding:0;
+
 	}
 	:global(section) {
 		max-width: 1700px;
@@ -56,6 +59,6 @@ let w:number
 
 <svelte:window bind:innerWidth={w} />
 
-<main>
+<main bind:offsetHeight={offsetHeight}>
   <slot />
 </main>

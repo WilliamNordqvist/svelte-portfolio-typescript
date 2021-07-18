@@ -1,6 +1,7 @@
 <script lang="ts">
   import ArrowDownIcon from "../icons/arrow-down-icon.svelte";
   import { onMount } from 'svelte';
+  import { pageHeight, isMobile } from "../store";
 
   type skillProps = {
     title:string,
@@ -19,22 +20,22 @@
   ];
 
   let showSkillbar:Boolean;
-  let skillPosition: number;
-  let scrollYPosition:number;
-
-
+  let scrollYPosition: number;
+  let cvSectionHeight:number;
+   
   onMount(() => {
-    skillPosition = document.getElementsByTagName("section")[0].getBoundingClientRect().height * 1.5
+    cvSectionHeight =  document.getElementById("cv").getBoundingClientRect().height * 2.5;    
   })
 
 
-  $:if(scrollYPosition > skillPosition){
+  $:if(scrollYPosition > ($pageHeight - cvSectionHeight)){
     showSkillbar = true
   } else {
     showSkillbar = false
   } 
-
 </script>
+
+<svelte:window bind:scrollY={scrollYPosition}/>
 
 <style>
   section {
@@ -43,6 +44,7 @@
 
   .bars {
     width: 90%;
+    max-width: 900px;
   }
 
   .bar {
@@ -120,7 +122,7 @@
   }
 </style>
 
-<svelte:window bind:scrollY={scrollYPosition}/>
+
 
 <section id="skills" class="skills flex">
   <h2 class="Title">My Skills</h2>
