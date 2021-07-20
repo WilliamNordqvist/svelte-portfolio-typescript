@@ -1,7 +1,7 @@
 <script lang="ts">
   import ArrowDownIcon from "../icons/arrow-down-icon.svelte";
   import { onMount } from 'svelte';
-  import { pageHeight, isMobile } from "../store";
+  import { pageHeight } from "../store";
 
   type skillProps = {
     title:string,
@@ -9,14 +9,14 @@
   }
 
   const william:skillProps[] = [
-    { title: "HTML", skill: 80 },
-    { title: "JS", skill: 70 },
-    { title: "CSS", skill: 80 },
+    { title: "Javascript", skill: 80 },
+    { title: "Typescript", skill: 80 },
     { title: "React", skill: 85 },
-    { title: "Angular", skill: 40 },
-    { title: "Svelte", skill: 40 },
-    { title: "Node.js", skill: 50 },
-    { title: "SQL", skill: 30 },
+    { title: "HTML", skill: 90 },
+    { title: "CSS", skill: 90 },
+    { title: "Svelte", skill:60 },
+    { title: "Java", skill: 30 },
+    { title: "SQL", skill: 20 },
   ];
 
   let showSkillbar:Boolean;

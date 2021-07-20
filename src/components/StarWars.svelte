@@ -55,13 +55,10 @@
     }
   }
 
-  .text {
-    color: #f9f1e9;
-    text-align: center;
-    font-weight: 200;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+  .hero-container {    
+    perspective: 800px;
   }
+
   h1 {
     font-size: 4.5em;
     margin: 0;
@@ -87,16 +84,16 @@
 </style>
 
 <section class="hero-container flex">
-  <h1 class="william text">William</h1>
-  <h1 class="nordqvist text">Nordqvist</h1>
+  <h1 class="william Text">William</h1>
+  <h1 class="nordqvist Text">Nordqvist</h1>
 
   {#if visible}
-    <p transition:fly={{ y: 200, duration: 2000 }} class="text">
+    <p transition:fly={{ y: 200, duration: 2000 }} class="Text">
       FrontEnd Developer
     </p>
 
     <div transition:fade={{ delay: 200, duration: 3000 }}>
-      <ArrowDownIcon scrollTo="skills" positionY={$isMobile ? 30 : 15} size={30} />
+      <ArrowDownIcon scrollTo="work" positionY={$isMobile ? 30 : 15} size={30} />
     </div>
   {/if}
 </section>

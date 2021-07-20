@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { isMobile, storeData, isLoading } from "../store";
+  import ErrorComponent from "./Error.svelte"
+  import { isMobile, storeData, isError } from "../store";
   import type {worksProps} from '../store'
   import ArrowDownIcon from "../icons/arrow-down-icon.svelte";
   import Overlay from "./Overlay.svelte"
@@ -20,10 +21,6 @@
 </script>
 
 <style>
-  section {
-    padding: 5em 0;
-  }
-
   ul {
     padding: 0;
     display: flex;
@@ -138,8 +135,10 @@ span {
 }
 </style>
 
-  {#if $isLoading === false}
-  <section id="work">
+
+<section class="flex" id="work">
+  {#if $storeData}
+  
   <h2 class="Title">My Work</h2>
   <ul>
     {#each $storeData as work (work.id)}
@@ -157,9 +156,11 @@ span {
       </div>
     {/each}
   </ul>
-  <ArrowDownIcon scrollTo="skills" positionY={0} size={30} />
   <Overlay {selectedWork} {closeOverlay} {toggleOverlay} />
-</section>
 {/if}
 
-
+{#if $isError}
+<ErrorComponent/>
+{/if}
+<ArrowDownIcon scrollTo="skills" positionY={0} size={30} />
+</section>

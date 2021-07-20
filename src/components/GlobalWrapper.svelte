@@ -1,8 +1,8 @@
 <script lang="ts">
 import { fetchData, isMobile, pageHeight } from "../store"
- fetchData();
-let offsetHeight:number
+fetchData();
 
+let offsetHeight:number
 $:pageHeight.set(offsetHeight)
 
 let w:number
@@ -35,6 +35,13 @@ let w:number
   color: white;
   text-transform: uppercase;
   margin-top: 0;
+	}
+	:global(.Text) {
+    color: #f9f1e9;
+    text-align: center;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 	}
 
 	:global(.flex) {
