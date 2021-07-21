@@ -82,8 +82,12 @@
   }
 
   @media only screen and (max-width: 768px) {
+    ul {
+      width:100%;
+    }
+
     .card {
-      height: 12em;
+      width:100%;
     }
     .cardImg:hover > .gradient {
       transform: translateY(1000px);

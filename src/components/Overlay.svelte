@@ -73,11 +73,10 @@
     .contentContainer {
       width: 100%;
       height: 100%;
-      padding: 0px 8px;
     }
 
     .close {
-left:49%;
+      left:49%;
     }
 
     .content {
@@ -91,7 +90,7 @@ left:49%;
       width:100%;
     }
     .workImg {
-      width: 100%;
+      width: 90%;
     }
     .contentText {
       width: auto;
