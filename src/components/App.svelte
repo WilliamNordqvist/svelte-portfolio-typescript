@@ -6,6 +6,10 @@
 	import Works from "./Works.svelte"
 	import Cv from "./Cv.svelte"
 	import Footer from "./Footer.svelte"
+
+	if (location.protocol !== 'https:' || !location.host.includes("www")) {
+    location.replace("https://www.wnordqvist.com/");
+}
 </script>
 
 <GlobalWrapper>

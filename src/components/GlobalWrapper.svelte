@@ -20,6 +20,7 @@ let w:number
 	}
 	:global(section) {
 		max-width: 1700px;
+		margin:auto;
 		position: relative;
 		padding-bottom: 5em;
 		min-height: 100vh;
