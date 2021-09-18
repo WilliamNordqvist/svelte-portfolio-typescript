@@ -18,13 +18,13 @@ export const storeData:Writable <worksProps[]> = writable(undefined);
 export const fetchData = async ()  => {
   isLoading.set(true)
   try {
-    const response = await fetch("https://wnordqvist.com/data/db.json");
+    const response = await fetch("https://www.wnordqvist.com/data/db.json");
     if (response.ok) {
       let responseData = await response.json()	
       storeData.set(responseData)
     }
   } catch (error) {
-    console.log("FAILING FETCHING DATA FROM https://wnordqvist.com/data/db.json")
+    console.log("FAILING FETCHING DATA FROM https://www.wnordqvist.com/data/db.json")
     isError.set(true)
   }
   isLoading.set(false)
