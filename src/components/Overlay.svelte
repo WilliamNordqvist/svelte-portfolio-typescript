@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type {worksProps} from '../store'
   import CloseIcon from "../icons/closeIcon.svelte";
   import Github from '../icons/github.svelte'
+  import type { worksProps } from "../services/casesService";
 
   export let selectedWork:worksProps;
   export let closeOverlay:() => void;
@@ -28,6 +28,8 @@
   }
 
   .close {
+    background: transparent;
+    border:none;
     position: absolute;
     left: 10px;
     top: 10px;
@@ -49,7 +51,7 @@
   }
 
   .workImg {
-    width: 80%;
+    width: 50%;
     box-shadow: 0 10px 20px -6px #000;
   }
 
@@ -106,16 +108,16 @@
   style={`top:${toggleOverlay ? '0' : '100%'}`}
   >
   <div class="contentContainer">
-    <div class="close pointer" on:click={() => closeOverlay()}>
+    <button class="close pointer" on:click={() => closeOverlay()}>
       <CloseIcon size="20px" />
-    </div>
+    </button>
     {#if selectedWork}
       <div class="content">
 
         <a class="pointer" target="_blank" rel="noopener noreferrer" href={selectedWork.link}>
           <img
             class="workImg"
-            src={selectedWork.img}
+            src={selectedWork.image.url}
             alt={`image of ${selectedWork.name}`} />
         </a>
         <h1>{selectedWork.name}</h1>

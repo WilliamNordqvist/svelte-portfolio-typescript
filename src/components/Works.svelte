@@ -86,9 +86,6 @@
       width:100%;
     }
 
-    .card {
-      width:100%;
-    }
     .cardImg:hover > .gradient {
       transform: translateY(1000px);
     }
