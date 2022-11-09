@@ -127,12 +127,12 @@
         <div class="contentText">
           {@html selectedWork.description}
         </div>
-        {#if selectedWork.github}
+        {#if selectedWork.githubLink}
           <a
             class="pointer"
             target="_blank"
             rel="noopener noreferrer"
-            href={selectedWork.github}>
+            href={selectedWork.githubLink}>
             <Github />
           </a>
         {/if}

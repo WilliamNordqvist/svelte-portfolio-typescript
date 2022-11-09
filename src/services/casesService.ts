@@ -2,7 +2,7 @@ import { request, gql } from 'graphql-request'
 
 export type worksProps = undefined | {
   description:string,
-  github:string,
+  githubLink:string,
   id:number,
   image: {
     url:string
