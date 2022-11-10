@@ -114,7 +114,7 @@
     {#if selectedWork}
       <div class="content">
 
-        <a class="pointer" target="_blank" rel="noopener noreferrer" href={selectedWork.link}>
+        <a class="pointer" target="_blank" rel="noopener noreferrer" href={selectedWork.link || selectedWork.githubLink}>
           <img
             class="workImg"
             src={selectedWork.image.url}
@@ -136,6 +136,8 @@
             <Github />
           </a>
         {/if}
+
+        {#if selectedWork.link}
         <p>
           <b>
             <a
@@ -147,6 +149,8 @@
             </a>
           </b>
         </p>
+        {/if}
+       
       </div>
     {/if}
 
