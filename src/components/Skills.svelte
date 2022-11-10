@@ -9,14 +9,14 @@
   }
 
   const william:skillProps[] = [
-    { title: "Javascript", skill: 80 },
+    { title: "Javascript", skill: 90 },
     { title: "Typescript", skill: 80 },
-    { title: "React", skill: 85 },
+    { title: "React", skill: 90 },
     { title: "HTML", skill: 90 },
-    { title: "CSS", skill: 90 },
-    { title: "Svelte", skill:60 },
-    { title: "Java", skill: 30 },
-    { title: "SQL", skill: 20 },
+    { title: "CSS", skill: 80 },
+    { title: "Svelte", skill:80 },
+    { title: "Java", skill: 20 },
+    { title: "SQL", skill: 30 },
   ];
 
   let showSkillbar:Boolean;
