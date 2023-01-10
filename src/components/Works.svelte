@@ -1,7 +1,7 @@
 <script lang="ts">
   import ErrorComponent from "./Error.svelte"
   import { isMobile, storeData, isError } from "../store";
-  import type {worksProps} from '../store'
+  import type { worksProps } from "../services/casesService";
   import ArrowDownIcon from "../icons/arrow-down-icon.svelte";
   import Overlay from "./Overlay.svelte"
 
@@ -17,7 +17,7 @@
     selectedWork = undefined;
     toggleOverlay = false;
   };
-
+ 
 </script>
 
 <style>
@@ -86,15 +86,14 @@
       width:100%;
     }
 
-    .card {
-      width:100%;
-    }
     .cardImg:hover > .gradient {
       transform: translateY(1000px);
     }
   }
 
   .btn {
+  background-color: transparent;
+  cursor: pointer;
   color: #FFF;
   transition: all 0.5s;
   position: relative;
@@ -141,23 +140,22 @@ span {
 
 
 <section class="flex" id="work">
-  {#if $storeData}
-  
+  {#if $storeData}  
   <h2 class="Title">My Work</h2>
   <ul>
     {#each $storeData as work (work.id)}
-      <div class="card" on:click={$isMobile && (() => openOverlay(work))}>
-        <div class="cardImg" style={`background-image:url(${work.img})`}>
+      <button class="card" on:click={$isMobile && (() => openOverlay(work))}>
+        <div class="cardImg" style={`background-image:url(${work.image.url})`}>
           <div class="gradient">
             <div class="text flex">
               <h1 class="title">{work.name}</h1>
-                <div class="btn" on:click={() => openOverlay(work)}>
+                <button class="btn" on:click={() => openOverlay(work)}>
                   <span>Läs mer</span>
-                </div>
+                </button>
             </div>
           </div>
         </div>
-      </div>
+      </button>
     {/each}
   </ul>
   <Overlay {selectedWork} {closeOverlay} {toggleOverlay} />
