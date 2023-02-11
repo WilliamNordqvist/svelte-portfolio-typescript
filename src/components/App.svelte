@@ -6,6 +6,10 @@
 	import Works from "./Works.svelte"
 	import Cv from "./Cv.svelte"
 	import Footer from "./Footer.svelte"
+	import { inject } from '@vercel/analytics';
+
+  inject();
+
 
 </script>
 
